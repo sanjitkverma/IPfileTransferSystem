@@ -1,0 +1,2 @@
+Average throughput: 158.94410144019395 kB/s
+Standard deviation throughput: 180.73744894449172 kB/s

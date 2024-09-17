@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package filetransfer;
+
+// The file transfer service definition.
+service FileTransferService {
+  rpc UploadFile(stream FileRequest) returns (FileResponse) {}
+  rpc DownloadFile(FileDownloadRequest) returns (stream FileResponse) {}
+}
+
+message FileDownloadRequest {
+  string name = 1;
+}
+
+// The request message containing the file's name and data.
+message FileRequest {
+  string name = 1;
+  bytes data = 2;
+}
+
+// The response message containing the file's upload status.
+message FileResponse {
+  string message = 1;
+  bytes data = 2;
+}
